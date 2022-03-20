@@ -15,7 +15,7 @@ jobs:
         run: |
           npm install-ci-test
           npm run build
-      - name: Deploy 🚀
+      - name: Release 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           BRANCH: gh-pages
