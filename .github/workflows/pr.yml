@@ -1,7 +1,9 @@
 name: GitHub Actions Build and Deploy Demo
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    branches:
+      - main
+    types: [opened, synchronize, closed]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
