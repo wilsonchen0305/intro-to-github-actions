@@ -1,5 +1,7 @@
 name: GitHub Actions Build and Deploy Demo
-on: pull_request
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
