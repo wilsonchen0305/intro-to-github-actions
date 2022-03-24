@@ -2,9 +2,9 @@ name: GitHub Actions Build and Deploy Demo
 on:
   push:
     branches:
-      - main
+      - workshop-02
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,6 +13,10 @@ jobs:
         run: |
           npm install-ci-test
           npm run build
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
       - name: Release 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
